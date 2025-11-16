@@ -1,0 +1,19 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+bcrypt
+python-jose[cryptography]
+firebase-admin
+Pillow
+python-multipart
+google-cloud-storage
+pydantic-settings
+gunicorn # For production execution
+psycopg2-binary # Good practice to include a production DB driver
+pyotp
+qrcode[pil]
+cryptography
+twilio
+httpx
+reportlab
+python-dateutil
