@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  # The Backend FastAPI Service
+  backend:
+    build: ./backend
+    container_name: dortmed_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the backend code for live-reloading during development
+      - ./backend:/app
+      # Create a named volume to persist the SQLite database
+      - backend_db:/app/db
+    env_file:
+      - ./backend/.env
+    networks:
+      - dortmed-net
+    depends_on:
+      - ai_service
+
+  # The Frontend React Service
+  frontend:
+    build: ./frontend
+    container_name: dortmed_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    volumes:
+      # Mount the src directory for live-reloading during development
+      - ./frontend/src:/app/src
+    depends_on:
+      - backend
+  ai_service:
+    build: ./ai_service
+    container_name: dortmed_ai_service
+    restart: unless-stopped
+    # We don't need to expose the port to the host, as it's only accessed by the backend
+    # But for debugging, it can be useful:
+    # ports:
+    #   - "8080:8080"
+    volumes:
+      - ./ai_service/app:/ai_app/app # For live-reloading during development
+    networks:
+      - dortmed-net
+
+  ocr_service:
+    build: ./ocr_service
+    container_name: dortmed_ocr_service
+    restart: unless-stopped
+    # No ports need to be exposed externally
+    volumes:
+      - ./ocr_service/app:/ocr_app/app
+    networks:
+      - dortmed-net
+
+  scheduler:
+    build: ./backend  # Re-uses the same image as the backend API
+    container_name: dortmed_scheduler
+    restart: unless-stopped
+    command: [ "python", "scheduler.py" ] # This overrides the Dockerfile's CMD
+    volumes:
+      # We need to mount the code so it can find scheduler.py and main.py
+      - ./backend:/app
+      # It also needs access to the database volume
+      - backend_db:/app/db
+    env_file:
+      - ./backend/.env
+    networks:
+      - dortmed-net
+    depends_on:
+      - backend # Optional, but good practice to wait for the main app/db to be ready
+
+
+# Define named volumes
+volumes:
+  backend_db:
+
+# Define the network
+networks:
+  dortmed-net:
+    driver: bridge
