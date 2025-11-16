@@ -1,0 +1,23 @@
+{
+  "short_name": "DoltMed",
+  "name": "DoltMed - Advanced AI-Powered Medical System",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "description": "Experience the future of medical care with DortMed. Connect with elite physicians, manage your health with AI-powered insights, and access a global network of trusted hospitals."
+}

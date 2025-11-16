@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-base {
+    @apply block w-full appearance-none rounded-md border px-3 py-2 placeholder-gray-400 shadow-sm focus:outline-none sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-800 focus:border-dortmed-500 focus:ring-dortmed-500;
+  }
+
+  .pagination-button {
+    @apply relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .table-cell {
+      @apply px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300;
+  }
+
+  .filter-select {
+      @apply mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-dortmed-500 focus:border-dortmed-500 sm:text-sm rounded-md dark:bg-gray-700 dark:border-gray-600;
+  }
+  .tab-button {
+        @apply whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-200 dark:hover:border-gray-500;
+    }
+    .tab-active {
+        @apply border-dortmed-500 text-dortmed-600 dark:border-dortmed-400 dark:text-dortmed-300;
+    }
+  .table-header {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider;
+    }
+    .nav-link {
+        @apply text-gray-600 dark:text-gray-300 hover:text-dortmed-600 dark:hover:text-dortmed-400 font-semibold transition-colors;
+    }
+}

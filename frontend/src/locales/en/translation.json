@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "medical_records": "Medical Records",
+    "appointments": "Appointments",
+    "telemedicine": "Telemedicine",
+    "payments": "Payments",
+    "my_schedule": "My Schedule",
+    "my_patients": "My Patients",
+    "ai_diagnosis": "AI Diagnosis",
+    "user_management": "User Management",
+    "physician_verification": "Physician Verification",
+    "system_settings": "System Settings",
+    "hospitals": "Hospitals",
+    "drug_interactions": "Drug Interactions",
+    "medical_tips": "Medical Tips",
+    "audit_trail": "Audit Trail",
+    "find_a_doctor": "Find a Doctor",
+    "my_wellness": "My Wellness",
+    "communication_hub": "Communication Hub",
+    "development": "Development",
+    "subscriptions": "Subscriptions",
+    "financials": "Financials",
+    "my_medical_records": "My Medical Records",
+     "my_appointments": "My Appointments",
+     "hospital_directory": "Hospital Directory",
+     "start_consultation": "Start Consultation",
+     "my_wellness_plan": "My Wellness Plan",
+     "health_hub": "Health Hub",
+     "my_financials": "My Financials",
+      "professional_development": "Professional Development",
+     "master_dashboard": "Master Dashboard",
+     "content_management": "Content Management",
+      "my_vitals": "My Vitals"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "patient_subtitle": "Here's a quick overview of your health dashboard.",
+    "physician_subtitle": "Here is a summary of your activity for today.",
+    "book_appointment": "Book an Appointment",
+    "book_appointment_desc": "Find and schedule a consultation with a specialist.",
+    "upload_document": "Upload a Document",
+    "upload_document_desc": "Add a new prescription or lab result to your records.",
+    "upcoming_appointments": "Upcoming Appointments",
+    "no_upcoming_appointments": "You have no upcoming appointments.",
+    "ai_title": "Discover AI-Powered Health Insights",
+    "ai_desc": "Use our tools to check symptoms, analyze risks, and get personalized advice.",
+    "ai_action": "Explore AI Tools"
+  },
+  "schedule": {
+    "title": "Manage Availability",
+    "subtitle": "Set your weekly hours for patient appointments. Changes will be reflected in real-time.",
+    "save_changes": "Save Changes",
+    "add_slot": "Add time slot",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "welcome": {
+    "hero_title_part1": "Your Health,",
+    "hero_title_part2": "Intelligently Managed.",
+    "hero_subtitle": "Connect with top physicians, manage your medical records securely, and get AI-powered insights for a healthier life.",
+    "get_started": "Get Started",
+    "learn_more": "Learn More",
+    "features_heading": "Advanced Healthcare at Your Fingertips",
+    "features_subheading": "Experience a new era of personalized and accessible medical care.",
+    "feature1_title": "Secure Records",
+    "feature1_desc": "Upload and manage your prescriptions, lab results, and medical history in one encrypted, secure place.",
+    "feature2_title": "Telemedicine",
+    "feature2_desc": "Consult with certified physicians through high-quality, secure video calls from the comfort of your home.",
+    "feature3_title": "AI Insights",
+    "feature3_desc": "Leverage our AI to understand potential risks, check drug interactions, and receive personalized health tips.",
+    "footer_rights": "All rights reserved."
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "or": "Or",
+    "create_account": "create a new account",
+    "forgot_password": "Forgot your password?",
+    "submit": "Sign In"
+  },
+  "register": {
+    "title": "Create an Account"
+  },
+  "form": {
+    "email": "Email Address",
+    "password": "Password"
+  }
+}
