@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoltMed | AI Medical System Showcase</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- GLOBAL THEME: MEDICAL TECH --- */
+        :root {
+            --bg-color: #0b1015; /* Deep dark blue-black */
+            --card-bg: rgba(20, 30, 45, 0.7);
+            --accent-primary: #00f2fe; /* Medical Cyan */
+            --accent-secondary: #4facfe; /* Royal Blue */
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(79, 172, 254, 0.08) 0%, transparent 40%);
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADERS --- */
+        .header-section {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f2fe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin: 60px 0 20px;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-tag {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 15px auto 50px;
+            line-height: 1.6;
+        }
+
+        /* --- SWIPER CONTAINER --- */
+        .swiper {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 80px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 700px; /* Wider slides for Desktop Web screenshots */
+            height: auto;
+            border-radius: 16px;
+            /* Glassmorphism */
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        /* Mobile Response */
+        @media (max-width: 768px) {
+            .swiper-slide {
+                width: 90%;
+            }
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            /* Ensure long web pages don't stretch too tall */
+            max-height: 500px; 
+            object-fit: cover; 
+            object-position: top; /* Focus on the top of the webpage */
+            background-color: #1a1a1a;
+        }
+
+        /* Hover Captions */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0));
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .swiper-slide:hover {
+            border-color: rgba(0, 242, 254, 0.5);
+            box-shadow: 0 30px 60px -12px rgba(0, 242, 254, 0.15);
+        }
+
+        .swiper-slide:hover .caption {
+            transform: translateY(0);
+        }
+
+        /* Navigation & Pagination */
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.2;
+            width: 12px;
+            height: 12px;
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--accent-primary);
+            opacity: 1;
+            width: 30px;
+            border-radius: 6px;
+            transition: width 0.3s;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 20px;
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="badge">Explainable AI (XAI)</div>
+        <h1>DoltMed</h1>
+        <p class="subtitle">A production-grade medical platform featuring AI-driven risk analysis, secure physician scheduling, and blockchain-inspired immutable audit logs.</p>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- GALLERY SECTION                                -->
+    <!-- ============================================== -->
+    
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            
+            <!-- 1. Home & Landing -->
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/SD16Lp1X/home.png" alt="Landing Page">
+                <div class="caption">Platform Landing Page</div>
+            </div>
+            
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/B5hKS3kH/dark-home.png" alt="Dark Mode Home">
+                <div class="caption">Landing Page (Dark Mode)</div>
+            </div>
+
+            <!-- 2. Features -->
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/KpT3H24x/features.png" alt="Features">
+                <div class="caption">Core Medical Features</div>
+            </div>
+
+            <!-- 3. Authentication Flow -->
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/s97vx1xq/login.png" alt="Login">
+                <div class="caption">Secure Authentication</div>
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/Cp4rrLqs/join-any.png" alt="Role Selection">
+                <div class="caption">Role Selection (Patient/Doctor)</div>
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/BKTrBHPg/join-patient.png" alt="Patient Registration">
+                <div class="caption">Patient Registration Portal</div>
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/1G5VMcLQ/join-physician.png" alt="Physician Registration">
+                <div class="caption">Physician Verification Portal</div>
+            </div>
+
+            <!-- 4. System & Support -->
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/RGVq6cFz/Support.png" alt="Support">
+                <div class="caption">Help & Support Center</div>
+            </div>
+            
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/TB28MrDQ/footer-multilang.png" alt="Multi-language">
+                <div class="caption">Multi-lingual Accessibility</div>
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/0jNCKwYX/loading.png" alt="System Loading">
+                <div class="caption">Secure System Initializing</div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            initialSlide: 0, // Starts at the first image
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3 Seconds per slide
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true, 
+            },
+            coverflowEffect: {
+                rotate: 40,
+                stretch: 0,
+                depth: 200, // Increased depth for more 3D impact
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
